@@ -1,0 +1,456 @@
+#root {
+  margin: 0;
+  padding:0; 
+}
+#root {   
+    --background: 240 10% 3.9%;
+    --foreground: 0 0% 98%;
+    --card: 240 10% 3.9%;
+    --card-foreground: 0 0% 98%;
+    --popover: 240 10% 3.9%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 0 0% 98%;
+    --primary-foreground: 240 5.9% 10%;
+    --secondary: 240 3.7% 15.9%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 240 3.7% 15.9%;
+    --muted-foreground: 240 5% 64.9%;
+    --accent: 240 3.7% 15.9%;
+    --accent-foreground: 0 0% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 240 3.7% 15.9%;
+    --input: 240 3.7% 15.9%;
+    --ring: 240 4.9% 83.9%;
+    --dark-purple: #5033c3;
+    --light-purple: #8162ff;
+    --base-gray: #676767;
+    --light-gray: #a1a1a1;
+    --black-01: #1a1a1a
+}
+
+body{
+  background-color: hsl(var(--background));
+  color: hsl(var(--foreground))
+}
+
+#app {
+  max-width: 100%;
+  margin: 0 auto;  
+  text-align: center;
+}
+
+
+.App{
+  max-width: 80%;
+  min-height: 80vh;
+  margin: 0 auto; 
+  text-align: center;     
+}
+
+.homeApp{
+  max-width: 80%;
+  min-height: 80vh;
+  margin: 0 auto;      
+}
+
+.homeCatalog{
+  max-width: 80%;
+  min-height: 80vh;
+  margin-top: 2rem;
+  margin-bottom: 0;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.homeProduct{
+  max-width: 80%;
+  min-height: 80vh;
+  margin-top: 2rem;
+  margin-bottom: 0;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+}
+
+
+.loading-indicator:before {
+  content: '';
+  background: #000000cc;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  opacity: .8;
+}
+
+.loading-indicator:after {
+  content: url("../_assets/img/tenor.gif");
+  transform: scale(.2);
+  position: fixed;
+  width: 100%;
+  top: 50%;
+  left: 0;
+  z-index: 1001;
+  color:white;
+  text-align:center;
+  font-weight:bold;
+  font-size:1.5rem;        
+}
+
+
+.highlight {
+  font-size: 1.5em; 
+  color: green; 
+  font-weight: bold;
+}
+
+.strikethrough {
+  text-decoration: line-through;
+  color: lightgray; 
+  font-size: 1.2em;
+}
+
+
+
+.box-prod {
+  width: 200px; /* Defina a largura desejada */
+  height: 200px; /* Defina a altura desejada */
+  border: 2px solid #ffffff; /* Borda fina, branca */
+  border-radius: 15px; /* Cantos arredondados */
+  overflow: hidden; /* Para garantir que a imagem não saia da div */
+  position: relative; /* Para centralizar a imagem */
+}
+
+.box-prod img {
+  width: 70%; /* A imagem ocupa toda a largura da div */
+  height: 70%; /* A imagem ocupa toda a altura da div */
+  object-fit: cover; /* Corta a imagem para cobrir completamente a div */
+  display: block; /* Remove possíveis espaços em branco abaixo da imagem */
+}
+
+
+.product-card {    
+  width: 100%; /* Largura do cartão */
+  text-align: left; /* Centraliza o texto */
+}
+
+.product-name {  
+  margin-bottom: 10px; /* Espaçamento abaixo do nome */
+}
+
+.product-price {  
+  margin: 10px 0; /* Margem acima e abaixo do preço */
+}
+
+
+
+.star.filled {
+  color: #ffd700; /* Cor das estrelas preenchidas */
+}
+
+.star.next {
+  border-color: #888;
+}
+
+.box-discount {
+  max-width: 80px;
+  background-color: #007bff; /* Cor primária (azul) */  
+  border-radius: 15px; /* Bordas arredondadas */  
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Sombra leve para destaque */  
+  text-align: center; /* Centraliza o texto dentro da div */
+  margin: 0.7rem;
+  font-size: 0.5rem;
+  padding: 0.3rem;
+}
+
+.container-cat {
+  width: 100%;  
+  height: 15rem;  
+  border: 1px solid #ccc;
+  border-radius: 2px;
+  display: flex;
+  flex-direction: column; /* Organiza o conteúdo em coluna */
+  justify-content: space-between; /* Espaça entre imagem e texto */  
+  align-items: center; /* Centraliza verticalmente */  
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background: linear-gradient(135deg, #8a2be2, #5c3ca1); /* Gradiente roxo */  
+  margin-bottom: 2rem;                      
+}
+
+.container-cat img {
+  margin-top: 1.5rem;;
+  width: 50%; /* A imagem ocupa toda a largura da div */
+  height: 70%; /* A imagem ocupa toda a altura da div */
+  object-fit: cover; /* Corta a imagem para cobrir completamente a div */
+  display: block; /* Remove possíveis espaços em branco abaixo da imagem */  
+}
+
+.container-cat-txt{
+  width: 100%;
+  height: 2rem;  
+}
+.footer-text {
+  text-align: center; /* Centraliza o texto do rodapé */
+  background: hsla(var(--accent)) !important;
+  padding: 0.7rem;
+  margin: 0 auto;
+}
+
+.footer-div{
+  width: 100%;
+  height: 5rem;
+  background-color: hsla(var(--accent));
+}
+
+.uniform-button {
+  width: 100%; 
+}
+
+.btn-top{
+  width: 15rem; 
+}
+
+
+.my-link {
+  color: hsla(var(--card-foreground)); /* Altera a cor da fonte*/
+  text-decoration: none; /* Remove o sublinhado */  
+}
+
+.tech-link{
+  color: var(--dark-purple);
+}
+
+
+.col-img-prod {
+  text-align: left;
+  background-color:  var(-bg--black-01, var(--darkreader-background-ffffff, #181a1b));
+}
+
+
+.box-prod-lg {
+  display: flex; 
+}
+
+.box-prod-lg-img-01{
+  display: flex; /* Usando flexbox para alinhar as pequenas imagens */
+  flex-direction: column; /* Coloca as imagens em uma coluna */
+  margin-right: 20px; /* Espaço entre as pequenas imagens e a imagem maior */
+}
+
+.small-image{
+  width: 100px; /* Largura das pequenas imagens */
+  height: auto; /* Altura automática para manter proporção */
+  border: 1px solid #ccc; /* Borda para visibilidade */
+  border-radius: 5px; /* Bordas arredondadas */
+  margin-bottom: 10px; /* Espaço entre as pequenas imagens */
+}
+
+.large-image-container {
+  display: flex; /* Centraliza a imagem maior */
+  justify-content: center;
+  align-items: center;
+}
+
+
+.card {
+  background-color: #1e1e1e;
+  padding: 24px;
+  border-radius: 16px;
+  width: 100%;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+
+.info-topo {
+  color: #aaa;
+  font-size: 14px;
+  margin-bottom: 8px;
+}
+
+.titulo {
+  font-size: 20px;
+  margin-bottom: 4px;
+}
+
+.estoque {
+  color: #7b61ff;
+  font-size: 14px;
+  margin-bottom: 8px;
+}
+
+.avaliacoes {
+  display: flex;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.estrelas {
+  color: #7b61ff;
+  margin-right: 6px;
+}
+
+.avaliacoes-texto {
+  font-size: 14px;
+  color: #ccc;
+}
+
+.preco {
+  margin-bottom: 12px;
+}
+
+.preco .atual {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.preco .desconto {
+  background-color: #7b61ff;
+  border-radius: 16px;
+  padding: 4px 8px;
+  margin-left: 8px;
+  font-size: 14px;
+}
+
+.preco .de {
+  text-decoration: line-through;
+  color: #aaa;
+  display: block;
+  font-size: 14px;
+  margin-top: 4px;
+}
+
+.paginacao {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 16px 0;
+}
+
+.paginacao button {
+  background-color: #2c2c2c;
+  color: white;
+  border: 1px solid #444;
+  border-radius: 6px;
+  width: 28px;
+  height: 28px;
+  cursor: pointer;
+}
+
+.descricao-titulo {
+  font-size: 16px;
+  margin-bottom: 4px;
+}
+
+.descricao-texto {
+  color: #bbb;
+  font-size: 14px;
+  margin-bottom: 16px;
+}
+
+.btn-carrinho {
+  background-color: #7b61ff;
+  color: white;
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  margin-bottom: 20px;
+}
+
+.entrega {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background-color: #2c2c2c;
+  padding: 12px;
+  border-radius: 8px;
+  font-size: 14px;
+}
+
+.entrega-info {
+  color: #7b61ff;
+}
+
+.frete {
+  margin-left: 8px;
+  color: white;
+  font-weight: bold;
+}
+
+
+
+.dialog-app.p-dialog{
+  background-color: var(--black-01) !important;
+  height: 100vh;
+}
+
+.dialog-app.p-dialog .p-dialog-header {
+  background-color: var(--black-01) !important;
+}
+.dialog-app.p-dialog .p-dialog-content {  
+  overflow-y: hidden;
+  flex-grow: 1;
+  background-color: var(--black-01) !important;
+}
+
+.removeDialog.p-dialog .p-dialog-header{
+  background-color: var(--black-01) !important;  
+}
+.removeDialog.p-dialog .p-dialog-footer{
+  background-color: var(--black-01) !important;  
+}
+.removeDialog.p-dialog .p-dialog-content{
+  background-color: var(--black-01) !important;  
+}
+
+
+.datatable-demo.p-datatable .p-datatable-thead > tr > th {
+  background-color: var(--black-01) !important;  
+}
+
+.datatable-demo.p-datatable .p-datatable-tbody > tr {
+  background-color: var(--black-01) !important;  
+}
+
+.datatable-demo.p-datatable .p-datatable-tbody > tr:hover {
+  background-color: var(--black-01) !important;  
+}

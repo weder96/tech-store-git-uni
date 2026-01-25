@@ -1,0 +1,133 @@
+#root {   
+  --background: 240 10% 3.9%;
+  --foreground: 0 0% 98%;
+  --card: 240 10% 3.9%;
+  --card-foreground: 0 0% 98%;
+  --popover: 240 10% 3.9%;
+  --popover-foreground: 0 0% 98%;
+  --primary: 0 0% 98%;
+  --primary-foreground: 240 5.9% 10%;
+  --secondary: 240 3.7% 15.9%;
+  --secondary-foreground: 0 0% 98%;
+  --muted: 240 3.7% 15.9%;
+  --muted-foreground: 240 5% 64.9%;
+  --accent: 240 3.7% 15.9%;
+  --accent-foreground: 0 0% 98%;
+  --destructive: 0 62.8% 30.6%;
+  --destructive-foreground: 0 0% 98%;
+  --border: 240 3.7% 15.9%;
+  --input: 240 3.7% 15.9%;
+  --ring: 240 4.9% 83.9%;
+  --dark-purple: #5033c3;
+  --light-purple: #8162ff;
+  --base-gray: #676767;
+  --light-gray: #a1a1a1;
+  --black-01: #1a1a1a
+}
+
+.carrinho {
+    width: 100%;            
+    position: relative;
+    height: 80vh;
+  }
+
+  .carrinho-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #333;
+    padding-bottom: 0.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .produto {
+    display: flex;    
+    margin-bottom: 1rem;
+  }
+
+  .produto img {
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    background: #333;
+    border-radius: 8px;
+    margin-right: 0.8rem;
+  }
+
+  .info {
+    flex: 1;
+  }
+
+  .titulo {
+    font-size: 0.9rem;
+  }
+
+  .preco {
+    font-weight: bold;
+    color: #fff;
+  }
+
+  .preco-original {
+    text-decoration: line-through;
+    font-size: 0.75rem;
+    color: #888;
+  }
+
+  .controle {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-top: 0.5rem;
+  }
+
+  .controle button {
+    background-color: #333;
+    border: none;
+    color: white;
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
+    border-radius: 4px;
+  }
+
+  .lixeira {
+    align-self: flex-start;
+    color: #888;
+    cursor: pointer;
+  }
+
+  .resumo {
+    width: 100%;
+    border-top: 1px solid #333;
+    padding-top: 1rem;
+    font-size: 0.9rem;    
+  }
+
+  .resumo-item {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0.5rem;
+  }
+
+  .total {
+    font-weight: bold;
+    font-size: 1.1rem;
+    margin-top: 1rem;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .botao-finalizar {
+    width: 100% !important;
+    background-color: #7b5dfc;
+    color: white;    
+    padding: 1rem;
+    margin-top: 2rem;
+    border-radius: 8px;
+    font-weight: bold;
+    justify-content: center;      /* Center horizontally */
+    align-items: center;  
+    cursor: pointer; 
+    position: absolute;
+    bottom: 0;
+  }
